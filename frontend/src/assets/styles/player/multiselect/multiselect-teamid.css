@@ -1,0 +1,14 @@
+.option__image {
+    width: 50px;
+    height: 50px;
+    /* Obraz zaokrąglony */
+    border-radius: 50%;
+}
+
+.option__title {
+    margin-left: 10px;
+    color: #009fb6;
+    /* Czcionka */
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "image": "sponsors/sponsor1.jpg",
+    "title": "Sponsor 1 "
+  },
+  {
+    "id": 1,
+    "image": "sponsors/sponsor1.jpg",
+    "title": "Sponsor 2"
+  },
+  {
+    "id": 2,
+    "image": "sponsors/sponsor1.jpg",
+    "title": "Sponsor 3"
+  },
+  {
+    "id": 3,
+    "image": "sponsors/sponsor1.jpg",
+    "title": "Sponsor 4"
+  },
+  {
+    "id": 4,
+    "image": "sponsors/sponsor1.jpg",
+    "title": "Sponsor 5"
+  },
+  {
+    "id": 5,
+    "image": "sponsors/sponsor1.jpg",
+    "title": "Sponsor 6"
+  }
+]

@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aa6ab390-fede-41af-9ac6-b17472b329e8" name="Changes" comment="Updated deleteById() in TeamService">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pl/edu/pjwstk/snl/config/dataloader/ScheduleLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pl/edu/pjwstk/snl/config/dataloader/ScheduleLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Article/ArticleForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Article/ArticleForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Article/EditArticle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Article/EditArticle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Players/Player/EditPlayer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Players/Player/EditPlayer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Players/Player/PlayerForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Players/Player/PlayerForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Players/PlayersComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Players/PlayersComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Sponsor/SponsorFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sponsor/SponsorFormComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Team/EditTeam.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Team/EditTeam.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Team/TeamForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Team/TeamForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/modules/auth/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/modules/auth/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Inputs/TeamId.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Inputs/TeamId.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Leagues/Form/AddLeagueView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Leagues/Form/AddLeagueView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Leagues/LeagueView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Leagues/LeagueView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Leagues/LeaguesListView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Leagues/LeaguesListView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Leagues/SingleLeagueView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Leagues/SingleLeagueView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Match/Actions/PenaltyShots.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Match/Actions/PenaltyShots.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Match/CloseMatch/CloseMatchView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Match/CloseMatch/CloseMatchView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Match/CreateNewMatch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Match/CreateNewMatch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Match/MatchActionHome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Match/MatchActionHome.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Match/MatchActionVisiting.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Match/MatchActionVisiting.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Match/MatchActionsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Match/MatchActionsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Match/MatchByTeamView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Match/MatchByTeamView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Match/MatchesListView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Match/MatchesListView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Match/MedicOrJudge/MedicOrJudgeNotes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Match/MedicOrJudge/MedicOrJudgeNotes.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Match/Protocol/ProtocolView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Match/Protocol/ProtocolView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Match/SingleActionView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Match/SingleActionView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Match/SingleMatchView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Match/SingleMatchView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/News/Admin/NewsAdminView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/News/Admin/NewsAdminView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/News/Articles/SingleArticle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/News/Articles/SingleArticle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/News/News.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/News/News.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/News/NewsTabView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/News/NewsTabView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Player/Admin/PlayerAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Player/Admin/PlayerAdmin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Player/PlayersTabView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Player/PlayersTabView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Player/SinglePlayer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Player/SinglePlayer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Search/SearchMultiSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Search/SearchMultiSelect.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Sponsors/Admin/SponsorAdminView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Sponsors/Admin/SponsorAdminView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Sponsors/SponsorsList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Sponsors/SponsorsList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Sponsors/SponsorsTabView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Sponsors/SponsorsTabView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Squad/AddFivePlayers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Squad/AddFivePlayers.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Squad/SquadMultiSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Squad/SquadMultiSelect.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Teams/Team/Admin/TeamAdminView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Teams/Team/Admin/TeamAdminView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Teams/Team/Form/TeamForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Teams/Team/Form/TeamForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Teams/Team/SingleTeamView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Teams/Team/SingleTeamView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Teams/TeamMatch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Teams/TeamMatch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Teams/TeamMatches.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Teams/TeamMatches.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Teams/TeamsList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Teams/TeamsList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Teams/TeamsTab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Teams/TeamsTab.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Trainer/Strategy/SingleStrategy.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Trainer/Strategy/SingleStrategy.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Trainer/Strategy/StrategyList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Trainer/Strategy/StrategyList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Trainer/Strategy/StrategyView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Trainer/Strategy/StrategyView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Trainer/TrainingPlan/TrainingPlan.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Trainer/TrainingPlan/TrainingPlan.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/UpcomingMatch/UpcomingMatch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/UpcomingMatch/UpcomingMatch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/UpcomingMatch/UpcomingMatchSquadView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/UpcomingMatch/UpcomingMatchSquadView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Users/AddNewUserView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Users/AddNewUserView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Users/UsersView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Users/UsersView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vue.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="936973378affa786fa5633172b44339f56553a25" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2FuX0rOiFoJ5O2sQAyvAkJNjDO3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/macie/IdeaProjects/pjatk_dyplomowa_backend/api/src/main/java/pl/edu/pjwstk/snl/config/dataloader&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;069d8d9e30bd7deadcec1cf0a7bd3115&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\macie\IdeaProjects\pjatk_dyplomowa_backend\api\src\main\java\pl\edu\pjwstk\snl\config\dataloader" />
+      <recent name="C:\Users\macie\IdeaProjects\pjatk_dyplomowa_backend\src\main\java\pl\edu\pjwstk\snl" />
+      <recent name="C:\Users\macie\IdeaProjects\pjatk_dyplomowa_backend\src\test" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="pl.edu.pjwstk.snl.match.dto.ActionAggregator" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="pl.edu.pjwstk.snl.security.User" />
+      <recent name="pl.edu.pjwstk.snl.team" />
+      <recent name="pl.edu.pjwstk.snl.strategy" />
+      <recent name="pl.edu.pjwstk.snl.sponsors" />
+      <recent name="pl.edu.pjwstk.snl.schedule" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SnLApplication">
+    <configuration name="LeagueServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="snl" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.edu.pjwstk.snl.league.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.edu.pjwstk.snl.league" />
+      <option name="MAIN_CLASS_NAME" value="pl.edu.pjwstk.snl.league.LeagueServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewsServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="snl" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.edu.pjwstk.snl.news.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.edu.pjwstk.snl.news" />
+      <option name="MAIN_CLASS_NAME" value="pl.edu.pjwstk.snl.news.NewsServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeamServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="snl" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.edu.pjwstk.snl.team.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.edu.pjwstk.snl.team" />
+      <option name="MAIN_CLASS_NAME" value="pl.edu.pjwstk.snl.team.TeamServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SnLApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="snl" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.edu.pjwstk.snl.SnLApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SnLApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="pjatk_dyplomowa_backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.edu.pjwstk.snl.SnLApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SnLApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
+      <option name="ALTERNATIVE_JRE_PATH" value="18" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="snl" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.edu.pjwstk.snl.SnLApplication" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="VM_PARAMETERS" value="-DskipTests" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.TeamServiceTest" />
+      <item itemvalue="JUnit.LeagueServiceTest" />
+      <item itemvalue="JUnit.NewsServiceTest" />
+      <item itemvalue="Spring Boot.SnLApplication" />
+      <item itemvalue="Spring Boot.SnLApplication (1)" />
+      <item itemvalue="Spring Boot.SnLApplication (2)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TeamServiceTest" />
+        <item itemvalue="JUnit.LeagueServiceTest" />
+        <item itemvalue="JUnit.NewsServiceTest" />
+        <item itemvalue="JUnit.NewsServiceTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa6ab390-fede-41af-9ac6-b17472b329e8" name="Changes" comment="" />
+      <created>1665342730080</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665342730080</updated>
+      <workItem from="1665342733575" duration="2544000" />
+      <workItem from="1665399857808" duration="7000" />
+      <workItem from="1665401199551" duration="2441000" />
+      <workItem from="1665429381789" duration="2526000" />
+      <workItem from="1665579066768" duration="9000" />
+      <workItem from="1665582834770" duration="179000" />
+      <workItem from="1665661890472" duration="9608000" />
+      <workItem from="1665678456344" duration="602000" />
+      <workItem from="1665687887742" duration="6471000" />
+      <workItem from="1665729437101" duration="1878000" />
+      <workItem from="1666104119977" duration="1616000" />
+      <workItem from="1666122846104" duration="107000" />
+      <workItem from="1666124311960" duration="613000" />
+      <workItem from="1666191682635" duration="618000" />
+      <workItem from="1666263544548" duration="1740000" />
+      <workItem from="1666269034497" duration="15002000" />
+      <workItem from="1666334247938" duration="4207000" />
+      <workItem from="1666387984714" duration="684000" />
+      <workItem from="1666425960046" duration="798000" />
+      <workItem from="1666553920486" duration="775000" />
+      <workItem from="1666637791167" duration="3299000" />
+      <workItem from="1666641231151" duration="64000" />
+      <workItem from="1666681302798" duration="8428000" />
+      <workItem from="1666696077125" duration="951000" />
+      <workItem from="1666725041506" duration="819000" />
+      <workItem from="1666785091618" duration="7942000" />
+      <workItem from="1666870121901" duration="13725000" />
+      <workItem from="1666945110833" duration="1391000" />
+      <workItem from="1666950244473" duration="181000" />
+      <workItem from="1666950526098" duration="3873000" />
+      <workItem from="1667489441942" duration="290000" />
+      <workItem from="1667547307315" duration="637000" />
+      <workItem from="1667557067532" duration="83000" />
+      <workItem from="1667643868960" duration="920000" />
+      <workItem from="1667758149839" duration="841000" />
+      <workItem from="1667763229539" duration="1673000" />
+      <workItem from="1667767868783" duration="1916000" />
+      <workItem from="1667822151622" duration="1712000" />
+      <workItem from="1667921551425" duration="560000" />
+      <workItem from="1668095933992" duration="7777000" />
+      <workItem from="1668195314831" duration="13794000" />
+      <workItem from="1668253940903" duration="5235000" />
+      <workItem from="1668275445194" duration="750000" />
+      <workItem from="1668276659931" duration="19000" />
+      <workItem from="1668354512716" duration="4349000" />
+      <workItem from="1668376282281" duration="60000" />
+      <workItem from="1668427134493" duration="9765000" />
+      <workItem from="1668691278414" duration="7343000" />
+      <workItem from="1668757095955" duration="4965000" />
+      <workItem from="1668768567464" duration="3963000" />
+      <workItem from="1668777989789" duration="748000" />
+      <workItem from="1668873788883" duration="3518000" />
+      <workItem from="1668951655563" duration="13882000" />
+      <workItem from="1669036360894" duration="14486000" />
+      <workItem from="1669206625258" duration="5289000" />
+      <workItem from="1669230199310" duration="597000" />
+      <workItem from="1669298841031" duration="3216000" />
+      <workItem from="1669362024758" duration="702000" />
+      <workItem from="1669485018385" duration="2110000" />
+      <workItem from="1669561708871" duration="2123000" />
+      <workItem from="1669637771870" duration="8157000" />
+      <workItem from="1669723364126" duration="2895000" />
+      <workItem from="1669810611152" duration="8296000" />
+      <workItem from="1669896012021" duration="18153000" />
+      <workItem from="1669930880859" duration="597000" />
+      <workItem from="1669966428688" duration="2381000" />
+      <workItem from="1669978472383" duration="846000" />
+      <workItem from="1669995657598" duration="4386000" />
+      <workItem from="1670014745146" duration="1165000" />
+      <workItem from="1670023859250" duration="1028000" />
+      <workItem from="1670068536891" duration="17662000" />
+      <workItem from="1670157947332" duration="1537000" />
+      <workItem from="1670258737957" duration="8322000" />
+      <workItem from="1670271984802" duration="3061000" />
+      <workItem from="1670321378153" duration="6279000" />
+      <workItem from="1670341440388" duration="266000" />
+      <workItem from="1670348677414" duration="2817000" />
+      <workItem from="1670415019586" duration="2768000" />
+      <workItem from="1670507468086" duration="14415000" />
+      <workItem from="1670571510440" duration="3033000" />
+      <workItem from="1670582947024" duration="737000" />
+      <workItem from="1670606183542" duration="3423000" />
+      <workItem from="1670619717216" duration="7738000" />
+      <workItem from="1670675030560" duration="1201000" />
+      <workItem from="1670695614937" duration="2394000" />
+      <workItem from="1670763847798" duration="9888000" />
+      <workItem from="1670846706253" duration="3696000" />
+      <workItem from="1670874349295" duration="3314000" />
+      <workItem from="1670949007298" duration="405000" />
+      <workItem from="1670949438080" duration="306000" />
+      <workItem from="1670964182970" duration="3385000" />
+      <workItem from="1671009061490" duration="1019000" />
+      <workItem from="1671012169313" duration="631000" />
+      <workItem from="1671019466752" duration="11856000" />
+      <workItem from="1671047528380" duration="594000" />
+      <workItem from="1671054589209" duration="275000" />
+      <workItem from="1671106931621" duration="6852000" />
+      <workItem from="1671190281023" duration="6781000" />
+      <workItem from="1671279568288" duration="2917000" />
+      <workItem from="1671368849577" duration="2535000" />
+      <workItem from="1671453094687" duration="174000" />
+      <workItem from="1671475432011" duration="1848000" />
+      <workItem from="1671557867053" duration="2275000" />
+      <workItem from="1671614531998" duration="42000" />
+      <workItem from="1671633967467" duration="22000" />
+      <workItem from="1671634541613" duration="12154000" />
+      <workItem from="1671699159059" duration="11019000" />
+      <workItem from="1671738314504" duration="8000" />
+      <workItem from="1671746261152" duration="509000" />
+      <workItem from="1671781372617" duration="3160000" />
+      <workItem from="1671792678020" duration="4119000" />
+      <workItem from="1671809381264" duration="2586000" />
+      <workItem from="1671883225087" duration="6675000" />
+      <workItem from="1671925036685" duration="598000" />
+      <workItem from="1671975038080" duration="1569000" />
+      <workItem from="1672045208507" duration="5307000" />
+      <workItem from="1672057249377" duration="9000" />
+      <workItem from="1672148824152" duration="1791000" />
+      <workItem from="1672173871272" duration="8614000" />
+      <workItem from="1672224743217" duration="8746000" />
+      <workItem from="1672425245567" duration="5062000" />
+      <workItem from="1672497253115" duration="6073000" />
+      <workItem from="1672581480587" duration="619000" />
+      <workItem from="1672609544517" duration="778000" />
+      <workItem from="1672662497389" duration="4237000" />
+      <workItem from="1672743414186" duration="8286000" />
+      <workItem from="1672840774448" duration="4478000" />
+      <workItem from="1672917466868" duration="20389000" />
+      <workItem from="1672961373119" duration="114000" />
+      <workItem from="1673007911798" duration="7643000" />
+      <workItem from="1673094263102" duration="9590000" />
+      <workItem from="1673124614305" duration="1264000" />
+      <workItem from="1673178417270" duration="22543000" />
+      <workItem from="1673270293236" duration="17406000" />
+      <workItem from="1673339285639" duration="9945000" />
+      <workItem from="1673361500061" duration="5178000" />
+      <workItem from="1673384178983" duration="1760000" />
+      <workItem from="1673386733660" duration="800000" />
+      <workItem from="1673426084810" duration="2898000" />
+      <workItem from="1673437527421" duration="3964000" />
+      <workItem from="1673448471931" duration="12792000" />
+      <workItem from="1673522208483" duration="26517000" />
+      <workItem from="1673595534041" duration="7428000" />
+      <workItem from="1673619348644" duration="6141000" />
+      <workItem from="1673692485664" duration="12305000" />
+      <workItem from="1673785223302" duration="15818000" />
+      <workItem from="1673872716145" duration="22458000" />
+      <workItem from="1673910674291" duration="63000" />
+      <workItem from="1673956196318" duration="20016000" />
+      <workItem from="1674042336561" duration="8215000" />
+      <workItem from="1674125106147" duration="13907000" />
+      <workItem from="1674204617138" duration="2742000" />
+      <workItem from="1674304018139" duration="12630000" />
+      <workItem from="1674396154231" duration="8716000" />
+      <workItem from="1674475267503" duration="7520000" />
+      <workItem from="1674559112598" duration="1746000" />
+      <workItem from="1674572424671" duration="2751000" />
+      <workItem from="1674581688705" duration="2014000" />
+      <workItem from="1674639604511" duration="34209000" />
+      <workItem from="1674682668155" duration="25000" />
+    </task>
+    <task id="LOCAL-00008" summary="Added Strategy package">
+      <created>1668258606280</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1668258606280</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Create Player without image">
+      <created>1668357337962</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1668357337963</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added team schedule package: model, serializer, repository, service, controller">
+      <created>1668441024375</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1668441024375</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added sponsor package: model, repository, service, controller">
+      <created>1668713464153</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1668713464153</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added api/trainers/&lt;id&gt;/team endpoint in TrainerController">
+      <created>1668714004112</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1668714004112</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Updated id generation strategy to IDENTITY">
+      <created>1669049681021</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669049681021</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added Team&lt;-&gt;Player many-to-many relationship. Updated models, repositories, services, controllers">
+      <created>1669049713999</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669049713999</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added Team&lt;-&gt;League many-to-many relationship. Created models, repositories, services, controllers. Updated Team package.">
+      <created>1669063051469</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1669063051469</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Delete league by id and delete player by id works as intended if there are association to team. Null references are removed.">
+      <created>1669228846380</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1669228846380</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Bugfix/ Add existing player to team in POST /teams/{id}/players works now">
+      <created>1669645678034</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1669645678034</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Bugfix/ Add existing team to league in POST /leagues/{id}/teams works now">
+      <created>1669645803173</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1669645803173</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added Five package: model, serializer, repository, service, controller. Updated Player. Fixed team delete operation.">
+      <created>1669930164150</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1669930164150</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added Five creation with players. Custom serialization for /teams/{id}/fives RequestBody.">
+      <created>1670006787361</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1670006787361</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Removed unused endpoint.">
+      <created>1670006848996</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1670006848996</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Added player image field in Five response">
+      <created>1670071806029</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1670071806029</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Added user loader with secretary, medic and 2 medic/referee">
+      <created>1673299988864</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1673299988865</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Updated insertMatchInfo() in MatchService, assigning users to match">
+      <created>1673302341732</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1673302341732</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Updated PlayerSerializer, now we have teamId field instead of team name and image">
+      <created>1673524278636</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1673524278636</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Assigned teams to TLH league in TeamsLoader">
+      <created>1673525149251</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1673525149251</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Commented medicNot and refereeNot">
+      <created>1673529143536</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1673529143536</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Bugfix: Changed Marek Trenigowy to MArek Treningowy">
+      <created>1673531545624</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1673531545624</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Bugfix: Changed passwords to hashed versions">
+      <created>1673531933119</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1673531933119</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Bugfix: Added handling of no assigned team to player in PlayerSerializer">
+      <created>1673535389410</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1673535389410</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Added teamImage in PlayerSerializer">
+      <created>1673535976748</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1673535976748</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Updated api/matches/{matchId}/{teamId}/goals - now we can add goal without assistants">
+      <created>1673699799885</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1673699799885</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Updated Kamil Trenisz team to Dragons in UserLoader">
+      <created>1673790683974</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1673790683974</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Updated action list DTOs - new field teamType with either homeTeam or visitingTeam">
+      <created>1673792869510</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1673792869510</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Updated trainer names to Marek Goldwell and Kamil Dragons">
+      <created>1673795078846</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1673795078846</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Updated user names to Jan">
+      <created>1673795262152</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1673795262152</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Added isMatchReady() to check if match lineups are complete">
+      <created>1673795649974</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1673795649974</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Added status change checking in updateMatchStatus(), work in progress">
+      <created>1673906325008</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1673906325008</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Bugfix: status change checking in updateMatchStatus() - changed some conditions">
+      <created>1673971551900</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1673971551900</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Commented out changing to READY in updateMatchStatus() - it was only for helping me test status changes in postman">
+      <created>1673971703822</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1673971703822</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Added service test files">
+      <created>1673974386798</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1673974386798</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Removed comment in User.java">
+      <created>1674043299096</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1674043299096</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Added auth config for accepting only authorized and commented out version with all requests accepted">
+      <created>1674644983123</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1674644983123</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Added save() test in TeamServiceTest">
+      <created>1674645020702</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1674645020702</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Updated auth config - accepts all request without authorization">
+      <created>1674645152502</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1674645152502</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Updated NewsController with authorization headers">
+      <created>1674648243859</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1674648243859</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Updated TeamController with authorization headers">
+      <created>1674650375857</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1674650375857</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Updated ScheduleController with authorization headers">
+      <created>1674650469051</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1674650469051</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Updated SponsorController with authorization headers">
+      <created>1674650539068</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1674650539068</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Updated StrategyController with authorization headers">
+      <created>1674650591567</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1674650591568</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Updated FiveController with authorization headers">
+      <created>1674650713860</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1674650713860</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Updated LeagueController with authorization headers">
+      <created>1674650795211</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1674650795211</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Updated PlayerController with authorization headers">
+      <created>1674650875545</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1674650875545</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Updated MatchController with authorization headers">
+      <created>1674651410958</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1674651410958</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Updated deleteById() in PlayerService">
+      <created>1674653127347</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1674653127347</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Updated deleteById() in TeamService">
+      <created>1674655842871</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1674655842872</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated api/matches/{matchId}/{teamId}/goals - now we can add goal without assistants" />
+    <MESSAGE value="Updated Kamil Trenisz team to Dragons in UserLoader" />
+    <MESSAGE value="Updated action list DTOs - new field teamType with either homeTeam or visitingTeam" />
+    <MESSAGE value="Updated trainer names to Marek Goldwell and Kamil Dragons" />
+    <MESSAGE value="Updated user names to Jan" />
+    <MESSAGE value="Added isMatchReady() to check if match lineups are complete" />
+    <MESSAGE value="Added status change checking in updateMatchStatus(), work in progress" />
+    <MESSAGE value="Bugfix: status change checking in updateMatchStatus() - changed some conditions" />
+    <MESSAGE value="Commented out changing to READY in updateMatchStatus() - it was only for helping me test status changes in postman" />
+    <MESSAGE value="Added service test files" />
+    <MESSAGE value="Removed comment in User.java" />
+    <MESSAGE value="Added auth config for accepting only authorized and commented out version with all requests accepted" />
+    <MESSAGE value="Added save() test in TeamServiceTest" />
+    <MESSAGE value="Updated auth config - accepts all request without authorization" />
+    <MESSAGE value="Updated NewsController with authorization headers" />
+    <MESSAGE value="Updated TeamController with authorization headers" />
+    <MESSAGE value="Updated ScheduleController with authorization headers" />
+    <MESSAGE value="Updated SponsorController with authorization headers" />
+    <MESSAGE value="Updated StrategyController with authorization headers" />
+    <MESSAGE value="Updated FiveController with authorization headers" />
+    <MESSAGE value="Updated LeagueController with authorization headers" />
+    <MESSAGE value="Updated PlayerController with authorization headers" />
+    <MESSAGE value="Updated MatchController with authorization headers" />
+    <MESSAGE value="Updated deleteById() in PlayerService" />
+    <MESSAGE value="Updated deleteById() in TeamService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated deleteById() in TeamService" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/pjwstk/snl/team/TeamService.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="this.playerRepository.findAll()" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

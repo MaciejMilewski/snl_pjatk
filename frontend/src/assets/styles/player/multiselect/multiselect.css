@@ -1,0 +1,48 @@
+/* Multiselect component */
+.multiselect__input {
+    font-size: 20px;
+    text-align: center;
+}
+
+.multiselect--active {
+    font-size: inherit;
+    text-align: center;
+
+}
+
+.multiselect {
+    text-align: center;
+
+}
+
+.multiselect__placeholder {
+    font-size: 20px;
+    vertical-align: center;
+    min-height: 20px;
+    margin-bottom: 0px;
+}
+
+.multiselect__tag {
+    background: #8debff;
+}
+
+.multiselect__tags {
+    border: 1px solid #8debff;
+    line-height: 8px;
+    margin-top: 8px;
+    padding: 8px 0px;
+}
+
+.multiselect__element {
+    text-align: left;
+}
+
+.multiselect__option--highlight {
+    background: #8debff;
+    color: #006394;
+}
+
+.multiselect__option--highlight::after {
+    background: #8debff;
+    color: #006394;
+}

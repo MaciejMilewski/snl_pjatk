@@ -1,0 +1,43 @@
+/* PlayerFormView component */
+.uk-form-large {
+    height: inherit !important;
+    display: inline-block;
+    float: right;
+    padding-right: 0;
+}
+
+.uk-form-controls {
+    z-index: -1;
+    padding: 10px;
+    background: #e1feff;
+}
+
+.uk-input {
+    border: 1px solid #8debff !important;
+}
+
+.uk-label {
+    padding: 10px 10px !important;;
+    background: #a6efff !important;;
+    width: 250px !important;;
+    border-radius: 0 15px 0 0 !important;; /* Shorthand */
+    border-left: 10px solid #006394 !important;;
+    /* Font */
+    font-weight: bold !important;;
+    color: #009fb6 !important;;
+    font-size: 15px !important;;
+}
+
+/* Form button */
+.uk-button-default {
+    border: 5px solid #006394 !important;;
+    background: #a6efff !important;;
+    border-left: 10px solid #006394 !important;;
+    border-right: 10px solid #006394 !important;;
+    /* Font */
+    border-radius: 10px 10px 10px 10px !important;
+    font-size: 15px !important;;
+    font-weight: bold !important;;
+    color: #009fb6 !important;;
+    margin-top: 10px !important;
+}

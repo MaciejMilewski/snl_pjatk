@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Bramkarz",
+    "position": "BR"
+  },
+  {
+    "name": "Lewy obrońca",
+    "position": "LO"
+  },
+  {
+    "name": "Prawy obrońca",
+    "position": "PO"
+  },
+  {
+    "name": "Lewy napastnik",
+    "position": "LS"
+  },
+  {
+    "name": "Środkowy napastnik",
+    "position": "SR"
+  },
+  {
+    "name": "Prawy napastnik",
+    "position": "PS"
+  }
+]

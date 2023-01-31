@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Leworęczny",
+    "stick": "Lewy",
+    "value": "Lewe"
+  },
+  {
+    "name": "Praworęczny",
+    "stick": "Prawy",
+    "value": "Prawe"
+  }
+]

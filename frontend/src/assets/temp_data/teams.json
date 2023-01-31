@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Złote Wilki",
+    "id": 1,
+    "img": "teams_logo/zlote_wilki.png"
+  },
+  {
+    "name": "Czarne owieczki",
+    "id": 2,
+    "img": "teams_logo/czarne_owieczki.png"
+  },
+  {
+    "name": "Zielone predatory",
+    "id": 3,
+    "img": "teams_logo/zielone_predatory.png"
+  }
+]

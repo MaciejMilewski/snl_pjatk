@@ -29,4 +29,6 @@ public class StrategyService {
     public void deleteByTeamId(long id) {
         this.strategyRepository.deleteByTeamId(id);
     }
+
+    public boolean existsByName(String name) { return this.strategyRepository.existsByName(name); }
 }

@@ -2,6 +2,7 @@ package pl.edu.pjwstk.snl.sponsors;
 
 import java.util.List;
 import java.util.Optional;
+import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +29,12 @@ public class SponsorService {
 
     public List saveAll(List<Sponsor> sponsors) {
         return sponsorRepository.saveAll(sponsors);
+    }
+
+    public boolean existsByName(String name) { return sponsorRepository.existsByName(name); }
+
+    @Transactional
+    public void deleteByName(String name) {
+        sponsorRepository.deleteByName(name);
     }
 }

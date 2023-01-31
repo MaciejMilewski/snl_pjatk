@@ -558,7 +558,10 @@ export default {
               });
             }
           })
-      this.$emit('incrementKey', 'akcje-meczowe')
+      setTimeout(()=>{
+        this.$emit('incrementKey', 'akcje-meczowe')
+      },1500)
+
     },
     savePenalty() {
       // console.log(this.minutesPenalty)
@@ -575,7 +578,7 @@ export default {
           id: this.penaltyPlayer.id,
         },
       })
-      console.log(json);
+
       axios.post("http://localhost:8080/api/matches/" + this.matchId + "/" + this.teamId + "/penalties", json, {
         headers: {
           'Authorization': 'Bearer '+this.User.userInfo.token,
@@ -625,7 +628,10 @@ export default {
               }
             })
       }
-      this.$emit('incrementKey', 'akcje-meczowe')
+      setTimeout(()=>{
+        this.$emit('incrementKey', 'akcje-meczowe')
+      },1500)
+
     },
     saveChange() {
       console.log(this.minutesChange)
@@ -637,10 +643,10 @@ export default {
         gameMinute: this.minutesChange,
         gameSecond: this.secondsChange,
         golkiperIn: {
-          id: this.inPlayer.id,
+          id: this.inPlayer.playerNumber,
         },
         golkiperOut: {
-          id: this.outPlayer.id,
+          id: this.outPlayer.playerNumber,
         },
       })
       axios.post("http://localhost:8080/api/matches/" + this.matchId + "/" + this.teamId + "/changeGolkipers", json, {
@@ -660,7 +666,10 @@ export default {
             }
           })
 
-      this.$emit('incrementKey', 'akcje-meczowe')
+      setTimeout(()=>{
+        this.$emit('incrementKey', 'akcje-meczowe')
+      },1500)
+
     },
     savePenaltyShot() {
       console.log(this.keeperPenaltyShot)
@@ -694,7 +703,10 @@ export default {
               });
             }
           })
-      this.$emit('incrementKey', 'akcje-meczowe')
+      setTimeout(()=>{
+        this.$emit('incrementKey', 'akcje-meczowe')
+      },1500)
+
     },
     saveTimeout() {
       const json = JSON.stringify({
@@ -703,12 +715,16 @@ export default {
       })
       axios.post('http://localhost:8080/api/matches/'+this.matchId+'/'+this.teamId+'/breakes',json,{
         headers: {
+          'Authorization': 'Bearer '+this.User.userInfo.token,
           'Content-Type': `application/json`,
         }
       }).then(response => {
         console.log(response);
       })
-      this.$emit('incrementKey', 'akcje-meczowe')
+      setTimeout(()=>{
+        this.$emit('incrementKey', 'akcje-meczowe')
+      },1500)
+
     },
 
     toggleTeamTime() {

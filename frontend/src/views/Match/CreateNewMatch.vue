@@ -1,177 +1,177 @@
 <template>
-    <div v-if="User !== null && (User.group === 'deweloper' || User.group === 'sekretarz')">
-      <form @submit.prevent="submitForm" class="" style="padding-right: 0">
-        <div class="uk-form-controls">
-          <label for="informacje-data-i-czas" class="uk-label">Data i czas spotkania</label>
-          <div class="uk-grid" id="informacje-data-i-czas">
-            <div class="uk-width-1-2" id="czas">
-              <input
-                  type="time"
-                  placeholder="Czas spotkania"
-                  class="uk-input"
-                  id="czas-spotkania"
-                  v-model="reactiveForm.matchTime"
-              >
-            </div>
-            <div class="uk-width-1-2" id="data">
-              <input
-                  type="date"
-                  placeholder="Data spotkania"
-                  class="uk-input"
-                  id="data-spotkania"
-                  v-model="reactiveForm.matchDate"
-              >
-            </div>
+  <div v-if="User !== null && (User.group === 'deweloper' || User.group === 'sekretarz')">
+    <form @submit.prevent="submitForm" class="" style="padding-right: 0">
+      <div class="uk-form-controls">
+        <label for="informacje-data-i-czas" class="uk-label">Data i czas spotkania</label>
+        <div class="uk-grid" id="informacje-data-i-czas">
+          <div class="uk-width-1-2" id="czas">
+            <input
+                type="time"
+                placeholder="Czas spotkania"
+                class="uk-input"
+                id="czas-spotkania"
+                v-model="reactiveForm.matchTime"
+            >
           </div>
-
-
-          <PlaceInput :placeholder="'Miejsce'" v-model:name="reactiveForm.place"/>
-
-          <div v-if="editContext === false">
-            <label for="informacje-druzyna-gospodarzy" class="uk-label">Drużyna gospodarzy</label>
-            <div class="uk-grid" id="informacje-druzyna-gospodarzy">
-              <div class="uk-width-1-1" id="druzyna-gospodarzy">
-                <HomeTeam v-model="reactiveForm.homeTeam" id="druzyna-gospodarzy-input" @teamSelected="selectTeam"/>
-              </div>
-            </div>
-
-            <div v-if="this.homeTeamSelected === true">
-              <label for="informacje-druzyna-gosci" class="uk-label">Drużyna gości</label>
-              <div class="uk-grid" id="informacje-druzyna-gosci">
-                <div class="uk-width-1-1" id="druzyna-gosci">
-                  <VisitingTeam v-model="reactiveForm.visitingTeam" id="druzyna-gosci-input" ref="guests-team"/>
-                </div>
-              </div>
-            </div>
-
+          <div class="uk-width-1-2" id="data">
+            <input
+                type="date"
+                placeholder="Data spotkania"
+                class="uk-input"
+                id="data-spotkania"
+                v-model="reactiveForm.matchDate"
+            >
           </div>
-
-
-          <div v-if="!editContext">
-            <label for="informacje-sedziowie" class="uk-label">Sędziowie główni</label>
-            <div class="uk-grid" id="informacje-sedziowie">
-              <div class="uk-width-1-2" id="sedzia-pierwszy">
-                <select v-model="reactiveForm.refereeOne" class="uk-select" style="margin-top: 10px">
-                  <option v-for="sedzia in this.sedziowieMedycy" :value="sedzia.id+'-'+sedzia.username"
-                          :key="sedzia.id">{{ sedzia.username }}
-                  </option>
-                </select>
-
-              </div>
-              <div class="uk-width-1-2" id="sedzia-drugi">
-                <select v-model="reactiveForm.refereeTwo" class="uk-select" style="margin-top: 10px">
-                  <option v-for="sedzia in this.sedziowieMedycy" :value="sedzia.id+'-'+sedzia.username"
-                          :key="sedzia.id">{{ sedzia.username }}
-                  </option>
-                </select>
-              </div>
-            </div>
-
-            <label for="informacje-medyk" class="uk-label">Medyk</label>
-            <div class="uk-grid" id="informacje-medyk">
-              <div class="uk-width-1-1">
-                <select v-model="reactiveForm.medic" class="uk-select" style="margin-top: 10px">
-                  <option v-for="sedzia in this.sedziowieMedycy" :value="sedzia.id+'-'+sedzia.username"
-                          :key="sedzia.id">{{ sedzia.username }}
-                  </option>
-                </select>
-              </div>
-            </div>
-
-            <label for="informacje-sekretarz" class="uk-label">Sekretarz</label>
-            <div class="uk-grid" id="informacje-sekretarz">
-              <div class="uk-width-1-1">
-                <select v-model="reactiveForm.secretary" class="uk-select" style="margin-top: 10px">
-                  <option v-for="sekretarz in this.sekretarze" :value="sekretarz.id" :key="sekretarz.id">
-                    {{ sekretarz.username }}
-                  </option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-
-          <label for="informacje-sedziowie-liniowi" class="uk-label">Sędziowie liniowi</label>
-          <div class="uk-grid" id="informacje-sedziowie-liniowi">
-            <div class="uk-width-1-2" id="sedzia-liniowy-pierwszy">
-              <LinesmenOne :placeholder="'Sędzia liniowy '" v-model:name="reactiveForm.linesmenOne" id="sedzia-liniowy-pierwszy-input"/>
-
-            </div>
-            <div class="uk-width-1-2" id="sedzia-linowy-drugi">
-              <LinesmenTwo :placeholder="'Sędzia liniowy '" v-model:name="reactiveForm.linesmenTwo" id="sedzia-liniowy-drugi-input"/>
-            </div>
-          </div>
-
-          <label for="informacje-sedziowie-kar" class="uk-label">Sędziowie kar</label>
-          <div class="uk-grid" id="informacje-sedziowie-kar">
-            <div class="uk-width-1-2" id="sedzia-kar-pierwszy">
-              <PenaltyRefereeOne :placeholder="'Sędzia kar '" v-model:name="reactiveForm.penaltyRefereeOne" id="sedzia-kar-pierwszy-id"/>
-
-            </div>
-            <div class="uk-width-1-2" id="sedzia-kar-drugi">
-              <PenaltyRefereeTwo :placeholder="'Sędzia kar '" v-model:name="reactiveForm.penaltyRefereeTwo" id="sedzia-kar-drugi-id"/>
-            </div>
-          </div>
-
-          <label for="informacje-sedzia-czasowy" class="uk-label">Sędzia czasowy</label>
-          <div class="uk-grid" id="informacje-sedzia-czasowy">
-            <div class="uk-width-1-1" id="sedzia-czasowy">
-              <TimeReferee :placeholder="'Sędzia czasowy'" v-model:name="reactiveForm.timeReferee" id="sedzia-czasowy-input"/>
-            </div>
-          </div>
-
-          <label for="informacje-trenerzy-host" class="uk-label">Trener drużyny gospodarzy</label>
-          <div class="uk-grid" id="informacje-trener-gospodarzy">
-            <div class="uk-width-1-2" id="trener-gospodarzy">
-              <HomeTrainer :placeholder="'Trener gospodarzy'" v-model:name="reactiveForm.homeTrainer" id="trener-gospodarzy-input"/>
-
-            </div>
-            <div class="uk-width-1-2" id="menadzer-gospodarzy">
-              <HomeManager :placeholder="'Kierownik gospodarzy'" v-model:name="reactiveForm.homeManager" id="menadzer-gospodarzy-input"/>
-            </div>
-          </div>
-
-          <label for="informacje-trenerzy-host" class="uk-label">Trener drużyny gości</label>
-          <div class="uk-grid" id="informacje-trener-gosci">
-            <div class="uk-width-1-2" id="trener-gosci">
-              <VisitingTrainer :placeholder="'Trener gości'" v-model:name="reactiveForm.visitingTrainer" id="trener-gosci-input"/>
-
-            </div>
-            <div class="uk-width-1-2" id="menadzer-gosci">
-              <VisitingManager :placeholder="'Kierownik gości'" v-model:name="reactiveForm.visitingManager" id="menadzer-gosci-input"/>
-            </div>
-          </div>
-
-          <label for="informacje-obserwator" class="uk-label">Obserwator</label>
-          <div class="uk-grid" id="informacje-obserwator">
-            <div class="uk-width-1-1" id="obserwator">
-              <Spectator :placeholder="'Obserwator'" v-model:name="reactiveForm.spectator" id="obserwator-input"/>
-            </div>
-          </div>
-
-          <label for="informacje-informacje-dodatkowe" class="uk-label">Informacje dodatkowe</label>
-          <div class="uk-grid" id="informacje-dodatkowe">
-            <div class="uk-width-1-2" id="frekwencja">
-              <input
-                  type="number"
-                  min="0"
-                  class="uk-input"
-                  style="margin-top: 10px"
-                  placeholder="Frekwencja"
-                  v-model="reactiveForm.attendance">
-            </div>
-            <div class="uk-width-1-2" id="spiker">
-              <Spiker :placeholder="'Spiker'" v-model:name="reactiveForm.spiker" id="spiker-input"/>
-            </div>
-
-
-          </div>
-
-
-          <button type="submit" class="uk-button uk-button-default uk-width-1-1 uk-margin">Zapisz</button>
         </div>
 
-      </form>
+
+        <PlaceInput :placeholder="'Miejsce'" v-model:name="reactiveForm.place"/>
+
+        <div v-if="editContext === false">
+          <label for="informacje-druzyna-gospodarzy" class="uk-label">Drużyna gospodarzy</label>
+          <div class="uk-grid" id="informacje-druzyna-gospodarzy">
+            <div class="uk-width-1-1" id="druzyna-gospodarzy">
+              <HomeTeam v-model="reactiveForm.homeTeam" id="druzyna-gospodarzy-input" @teamSelected="selectTeam"/>
+            </div>
+          </div>
+
+          <div v-if="this.homeTeamSelected === true">
+            <label for="informacje-druzyna-gosci" class="uk-label">Drużyna gości</label>
+            <div class="uk-grid" id="informacje-druzyna-gosci">
+              <div class="uk-width-1-1" id="druzyna-gosci">
+                <VisitingTeam v-model="reactiveForm.visitingTeam" id="druzyna-gosci-input" ref="guests-team"/>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div v-if="!editContext">
+          <label for="informacje-sedziowie" class="uk-label">Sędziowie główni</label>
+          <div class="uk-grid" id="informacje-sedziowie">
+            <div class="uk-width-1-2" id="sedzia-pierwszy">
+              <select v-model="reactiveForm.refereeOne" class="uk-select" style="margin-top: 10px">
+                <option v-for="sedzia in this.sedziowieMedycy" :value="sedzia.id+'-'+sedzia.username"
+                        :key="sedzia.id">{{ sedzia.username }}
+                </option>
+              </select>
+
+            </div>
+            <div class="uk-width-1-2" id="sedzia-drugi">
+              <select v-model="reactiveForm.refereeTwo" class="uk-select" style="margin-top: 10px">
+                <option v-for="sedzia in this.sedziowieMedycy" :value="sedzia.id+'-'+sedzia.username"
+                        :key="sedzia.id">{{ sedzia.username }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <label for="informacje-medyk" class="uk-label">Medyk</label>
+          <div class="uk-grid" id="informacje-medyk">
+            <div class="uk-width-1-1">
+              <select v-model="reactiveForm.medic" class="uk-select" style="margin-top: 10px">
+                <option v-for="sedzia in this.sedziowieMedycy" :value="sedzia.id+'-'+sedzia.username"
+                        :key="sedzia.id">{{ sedzia.username }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <label for="informacje-sekretarz" class="uk-label">Sekretarz</label>
+          <div class="uk-grid" id="informacje-sekretarz">
+            <div class="uk-width-1-1">
+              <select v-model="reactiveForm.secretary" class="uk-select" style="margin-top: 10px">
+                <option v-for="sekretarz in this.sekretarze" :value="sekretarz.id" :key="sekretarz.id">
+                  {{ sekretarz.username }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+
+        <label for="informacje-sedziowie-liniowi" class="uk-label">Sędziowie liniowi</label>
+        <div class="uk-grid" id="informacje-sedziowie-liniowi">
+          <div class="uk-width-1-2" id="sedzia-liniowy-pierwszy">
+            <LinesmenOne :placeholder="'Sędzia liniowy '" v-model:name="reactiveForm.linesmenOne" id="sedzia-liniowy-pierwszy-input"/>
+
+          </div>
+          <div class="uk-width-1-2" id="sedzia-linowy-drugi">
+            <LinesmenTwo :placeholder="'Sędzia liniowy '" v-model:name="reactiveForm.linesmenTwo" id="sedzia-liniowy-drugi-input"/>
+          </div>
+        </div>
+
+        <label for="informacje-sedziowie-kar" class="uk-label">Sędziowie kar</label>
+        <div class="uk-grid" id="informacje-sedziowie-kar">
+          <div class="uk-width-1-2" id="sedzia-kar-pierwszy">
+            <PenaltyRefereeOne :placeholder="'Sędzia kar '" v-model:name="reactiveForm.penaltyRefereeOne" id="sedzia-kar-pierwszy-id"/>
+
+          </div>
+          <div class="uk-width-1-2" id="sedzia-kar-drugi">
+            <PenaltyRefereeTwo :placeholder="'Sędzia kar '" v-model:name="reactiveForm.penaltyRefereeTwo" id="sedzia-kar-drugi-id"/>
+          </div>
+        </div>
+
+        <label for="informacje-sedzia-czasowy" class="uk-label">Sędzia czasowy</label>
+        <div class="uk-grid" id="informacje-sedzia-czasowy">
+          <div class="uk-width-1-1" id="sedzia-czasowy">
+            <TimeReferee :placeholder="'Sędzia czasowy'" v-model:name="reactiveForm.timeReferee" id="sedzia-czasowy-input"/>
+          </div>
+        </div>
+
+        <label for="informacje-trenerzy-host" class="uk-label">Trener drużyny gospodarzy</label>
+        <div class="uk-grid" id="informacje-trener-gospodarzy">
+          <div class="uk-width-1-2" id="trener-gospodarzy">
+            <HomeTrainer :placeholder="'Trener gospodarzy'" v-model:name="reactiveForm.homeTrainer" id="trener-gospodarzy-input"/>
+
+          </div>
+          <div class="uk-width-1-2" id="menadzer-gospodarzy">
+            <HomeManager :placeholder="'Kierownik gospodarzy'" v-model:name="reactiveForm.homeManager" id="menadzer-gospodarzy-input"/>
+          </div>
+        </div>
+
+        <label for="informacje-trenerzy-host" class="uk-label">Trener drużyny gości</label>
+        <div class="uk-grid" id="informacje-trener-gosci">
+          <div class="uk-width-1-2" id="trener-gosci">
+            <VisitingTrainer :placeholder="'Trener gości'" v-model:name="reactiveForm.visitingTrainer" id="trener-gosci-input"/>
+
+          </div>
+          <div class="uk-width-1-2" id="menadzer-gosci">
+            <VisitingManager :placeholder="'Kierownik gości'" v-model:name="reactiveForm.visitingManager" id="menadzer-gosci-input"/>
+          </div>
+        </div>
+
+        <label for="informacje-obserwator" class="uk-label">Obserwator</label>
+        <div class="uk-grid" id="informacje-obserwator">
+          <div class="uk-width-1-1" id="obserwator">
+            <Spectator :placeholder="'Obserwator'" v-model:name="reactiveForm.spectator" id="obserwator-input"/>
+          </div>
+        </div>
+
+        <label for="informacje-informacje-dodatkowe" class="uk-label">Informacje dodatkowe</label>
+        <div class="uk-grid" id="informacje-dodatkowe">
+          <div class="uk-width-1-2" id="frekwencja">
+            <input
+                type="number"
+                min="0"
+                class="uk-input"
+                style="margin-top: 10px"
+                placeholder="Frekwencja"
+                v-model="reactiveForm.attendance">
+          </div>
+          <div class="uk-width-1-2" id="spiker">
+            <Spiker :placeholder="'Spiker'" v-model:name="reactiveForm.spiker" id="spiker-input"/>
+          </div>
+
+
+        </div>
+
+
+        <button type="submit" class="uk-button uk-button-default uk-width-1-1 uk-margin">Zapisz</button>
+      </div>
+
+    </form>
 
   </div>
   <div v-else>
@@ -365,31 +365,34 @@ export default {
     }
   },
   created() {
-    let sekretarze = [];
-    let sedziowieMedycy = [];
-    axios.get("http://localhost:8080/api/auth/users",{
-    headers: {
-      'Authorization': 'Bearer '+this.User.userInfo.token,
-    }
-    }).then(response => {
-      response.data.forEach((d) => {
-        if (d.roles[0].name === 'ROLE_SECRETARY') {
-          sekretarze.push(d)
-        } else if (d.roles[0].name === 'ROLE_MEDIC_OR_JUDGE') {
-          sedziowieMedycy.push(d);
+    if(this.User){
+      let sekretarze = [];
+      let sedziowieMedycy = [];
+      axios.get("http://localhost:8080/api/auth/users",{
+        headers: {
+          'Authorization': 'Bearer '+this.User.userInfo.token,
+        }
+      }).then(response => {
+        response.data.forEach((d) => {
+          if (d.roles[0].name === 'ROLE_SECRETARY') {
+            sekretarze.push(d)
+          } else if (d.roles[0].name === 'ROLE_MEDIC_OR_JUDGE') {
+            sedziowieMedycy.push(d);
+          }
+        })
+        this.sekretarze = sekretarze;
+        this.sedziowieMedycy = sedziowieMedycy;
+      })
+      axios.get("http://localhost:8080/api/matches/"+this.match.id+'/comments',{
+        headers: {
+          'Authorization': 'Bearer '+this.User.userInfo.token,
         }
       })
-      this.sekretarze = sekretarze;
-      this.sedziowieMedycy = sedziowieMedycy;
-    })
-    axios.get("http://localhost:8080/api/matches/"+this.match.id+'/comments',{
-      headers: {
-        'Authorization': 'Bearer '+this.User.userInfo.token,
-      }
-    })
-        .then(response => {
-          this.comments = response.data;
-        })
+          .then(response => {
+            this.comments = response.data;
+          })
+    }
+
 
   },
   setup(props) {
@@ -530,12 +533,12 @@ export default {
           }
         }).then(response =>  {
           if(response.status === 200){
-              UIkit.notification({
-                message: "Pomyślnie edytowano informacje dotyczące meczu",
-                status: "success",
-                pos: "top-center",
-                timeout: 5000
-              })
+            UIkit.notification({
+              message: "Pomyślnie edytowano informacje dotyczące meczu",
+              status: "success",
+              pos: "top-center",
+              timeout: 5000
+            })
           }
         })
 

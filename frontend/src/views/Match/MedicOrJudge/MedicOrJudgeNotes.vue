@@ -1,20 +1,24 @@
 <template>
   <div id="notatki-medyka-sedziego-form">
     <h2 class="uk-text-center">Status: <b>{{ status }}</b></h2>
-    <textarea v-model="note" rows="4" cols="160" placeholder="Treść notatki" v-if="status!=='CORRECTED'"/>
+    <div v-if="status === 'DISAPPROVAL' || status === 'CORRECTED'">
+      <div v-for="comment in comments" :key="comment.id">
+        <div style="border: 1px solid #a6efff">
+          <div><b>Autor: </b> {{comment.author}}</div>
+          <div><b>Treść: </b>{{comment.message}}</div>
+        </div>
+      </div>
+    </div>
+    <textarea v-model="note" rows="4" cols="160" placeholder="Treść notatki" />
     <div>
-      <button v-if="status!=='CORRECTED'"
-          class="uk-button uk-button-default uk-width-1-2 margin-lef"
+
+      <button
+          class="uk-button uk-button-default uk-width-1-2 margin-left"
           @click="accept()">
         Akceptuj
       </button>
-      <button v-if="status==='CORRECTED'"
-              class="uk-button uk-button-default uk-width-1-1 margin-lef"
-              @click="accept()">
-        Akceptuj
-      </button>
-      <button v-if="status!=='CORRECTED'"
-          class="uk-button uk-button-default uk-width-1-2"
+      <button
+          class="uk-button uk-button-default uk-width-1-2 margin-left"
           @click="disaproval()">
         Odrzuć
       </button>
@@ -34,9 +38,20 @@ export default {
   computed: {
     ...mapGetters({User: "StateUser"})
   },
+  created() {
+    axios.get("http://localhost:8080/api/matches/"+ this.matchId+"/comments",{
+      headers: {
+        'Authorization': 'Bearer '+this.User.userInfo.token,
+      }
+    })
+        .then(response=>{
+          this.comments = response.data;
+        })
+  },
   data() {
     return {
-      note: null
+      note: null,
+      comments: []
     }
   },
   methods: {

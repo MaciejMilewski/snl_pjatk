@@ -202,7 +202,7 @@
               </div>
 
             </li>
-            <li v-if="User !== null && User.group === 'sekretarz'">
+            <li v-if="User !== null && ( User.group === 'sekretarz') || (User !== null && User.group === 'deweloper' && this.match.status === 'CONFLICT')">
               <div v-if="this.matchStarted === true">
                 <PenaltyShots
                     :team-home-image="this.match.homeImage"

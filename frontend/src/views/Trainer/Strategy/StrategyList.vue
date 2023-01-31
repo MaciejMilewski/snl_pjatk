@@ -35,7 +35,6 @@ export default {
       strategiesArray = result.data;
       _this.strategies = strategiesArray;
     })
-    console.log(strategiesArray);
 
   },
   methods: {

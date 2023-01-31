@@ -45,7 +45,6 @@ export default {
       let switcherLiElements = document.getElementById("switcher-tlh-administrator").getElementsByTagName('li');
 
       setTimeout(() => {
-        console.log(context)
         if (context === 'player') {
           incrementKey();
         } else if (context === 'article') {

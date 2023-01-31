@@ -61,7 +61,6 @@ export default {
     axios.get("http://localhost:8080/api/players/"+this.id)
         .then((response) =>{
           this.player = response.data
-          console.log(this.player);
           this.player.image = blobToDataURL(this.player.image)
         })
   }

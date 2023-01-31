@@ -133,7 +133,6 @@ export default {
     }
   },
   created() {
-    console.log("LEAGUE: ",this.league);
 
     axios.get("http://localhost:8080/api/teams/" + this.id + "/schedule").then((response) => {
       this.imageSchedule = blobToDataURL(response.data.image)

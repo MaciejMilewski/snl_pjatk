@@ -89,9 +89,7 @@ export default {
           this.player.position = objPosition
           this.player.id = this.id
           this.player.image = blobToDataURL(this.player.image)
-          console.log(this.player);
           this.player.teamImage = blobToDataURL(this.player.teamImage)
-          console.log(this.player.teamName)
           this.incrementKey()
         })
   }

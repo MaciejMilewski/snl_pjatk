@@ -510,12 +510,6 @@ export default {
   },
   methods: {
     saveGoal() {
-      console.log(this.minutesGoal)
-      console.log(this.secondsGoal)
-      console.log(this.situation)
-      console.log(this.shooter)
-      console.log(this.assistantFirst)
-      console.log(this.assistantSecond)
 
       // Obsłużenie gola bez asystentów
       if(this.assistantFirst === null){
@@ -576,7 +570,6 @@ export default {
           id: this.penaltyPlayer.id,
         },
       })
-      console.log(json);
       axios.post("http://localhost:8080/api/matches/" + this.matchId + "/" + this.teamId + "/penalties", json, {
         headers: {
           'Authorization': 'Bearer '+this.User.userInfo.token,
@@ -628,10 +621,6 @@ export default {
 
     },
     saveChange() {
-      console.log(this.minutesChange)
-      console.log(this.secondsChange)
-      console.log(this.inPlayer)
-      console.log(this.outPlayer)
 
       const json = JSON.stringify({
         gameMinute: this.minutesChange,
@@ -665,10 +654,6 @@ export default {
 
     },
     savePenaltyShot() {
-      console.log(this.keeperPenaltyShot)
-      console.log(this.shooterPenaltyShot)
-      console.log(this.secondsPenaltyShot)
-      console.log(this.minutesPenaltyShot)
 
       const json = JSON.stringify({
         gameMinute: this.minutesPenaltyShot,

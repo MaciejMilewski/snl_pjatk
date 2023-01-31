@@ -46,7 +46,6 @@ export default {
   },
   setup(props,context){
     function choosePlayer(value){
-      console.log(value);
       context.emit('playerSelection',value)
     }
     return {

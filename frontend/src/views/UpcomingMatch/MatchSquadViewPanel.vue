@@ -785,12 +785,10 @@ export default {
           if (this.teamType === 'home') {
             player.playerNumber = this.playerNumber;
             await this.SetPlayerTemp(player)
-            console.log("home", player)
             await this.SetPlayer({playerTemp: this.playerTemp, index: this.playerIndex})
           } else if (this.teamType === 'visiting') {
             player.playerNumber = this.playerNumber;
             await this.SetPlayerTemp(player)
-            console.log("visiting", player)
             await this.SetPlayerVisiting({playerTemp: this.playerTemp, index: this.playerIndex})
           }
 

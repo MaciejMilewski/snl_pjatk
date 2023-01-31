@@ -24,9 +24,6 @@ export default {
   props: ['player'],
   components: {PlayerFormView, PageLoader},
   computed: {...mapGetters({User: "StateUser"})},
-  created() {
-    console.log(this.player);
-  },
   methods: {
     submitPlayerForm(form, method) {
       //Obsługa formularza
@@ -117,7 +114,6 @@ export default {
                     });
                   } else {
                     //Blob image
-                    // console.log(data);
                     let blob = null;
                     if (typeof form.imageObjectValue === 'object') {
                       if (form.imageObjectValue !== null && form.imageObjectValue !== 'data:image/png;base64,null') {
@@ -173,7 +169,6 @@ export default {
                           })
                     // Player update
                     if (method === 'update') {
-                      console.log(form);
                       axios.put('http://localhost:8080/api/players/' + form.id, {
                             name: form.nameValue,
                             surname: form.surnameValue,

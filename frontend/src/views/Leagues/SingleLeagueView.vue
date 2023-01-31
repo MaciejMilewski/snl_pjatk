@@ -91,7 +91,6 @@ export default {
                 }
               }
             })
-          console.log(teamsData);
           this.teams = teamsData
         })
   }

@@ -15,7 +15,6 @@ export default {
   methods: {
     incrementKey(context){
       this.keyValue++;
-      console.log(context);
 
     }
   }

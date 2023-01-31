@@ -120,7 +120,6 @@ export default {
           pos: "top-center",
           timeout: 5000
         })
-        console.log(response);
       })
       setTimeout(() => {
         

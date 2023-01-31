@@ -512,12 +512,6 @@ export default {
   },
   methods: {
     saveGoal() {
-      console.log(this.minutesGoal)
-      console.log(this.secondsGoal)
-      console.log(this.situation)
-      console.log(this.shooter)
-      console.log(this.assistantFirst)
-      console.log(this.assistantSecond)
       // Obsłużenie gola bez asystentów
       if(this.assistantFirst === null){
         this.assistantFirst = {}
@@ -564,11 +558,6 @@ export default {
 
     },
     savePenalty() {
-      // console.log(this.minutesPenalty)
-      // console.log(this.penaltyType)
-      // console.log(this.secondsPenalty)
-      // console.log(this.penaltyDuration)
-      // console.log(this.penaltyPlayer)
       const json = JSON.stringify({
         gameMinute: this.minutesPenalty,
         gameSecond: this.secondsPenalty,
@@ -634,10 +623,6 @@ export default {
 
     },
     saveChange() {
-      console.log(this.minutesChange)
-      console.log(this.secondsChange)
-      console.log(this.inPlayer)
-      console.log(this.outPlayer)
 
       const json = JSON.stringify({
         gameMinute: this.minutesChange,
@@ -672,10 +657,6 @@ export default {
 
     },
     savePenaltyShot() {
-      console.log(this.keeperPenaltyShot)
-      console.log(this.shooterPenaltyShot)
-      console.log(this.secondsPenaltyShot)
-      console.log(this.minutesPenaltyShot)
 
       const json = JSON.stringify({
         gameMinute: this.minutesPenaltyShot,

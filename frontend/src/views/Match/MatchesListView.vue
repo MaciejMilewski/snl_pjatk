@@ -85,7 +85,6 @@ export default {
                   }else if(this.User.group === 'sedzia_medyk' && match.status === 'CORRECTED'){
                     matchesWithTeams.push(match);
                   }else if (this.User.group === 'sekretarz' && (match.status === 'CREATED' || match.status === 'READY')) {
-                    console.log(match.status);
                     matchesWithTeams.push(match);
                   }
 

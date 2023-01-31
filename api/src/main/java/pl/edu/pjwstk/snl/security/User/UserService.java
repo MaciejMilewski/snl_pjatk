@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.edu.pjwstk.snl.security.Role.ERole;
@@ -38,6 +39,7 @@ public class UserService {
 
     public boolean existsByEmail(String email) { return this.userRepository.existsByEmail(email);}
 
+    @Transactional
     public List<TrainerDTO> findAllTrainers() {
          List<User> users = this.userRepository.findAll();
          List<TrainerDTO> trainers = new ArrayList<>();
@@ -59,6 +61,7 @@ public class UserService {
         return trainers;
     }
 
+    @Transactional
     public boolean isAdmin(User user) {
         Set<Role> roles = user.getRoles();
 

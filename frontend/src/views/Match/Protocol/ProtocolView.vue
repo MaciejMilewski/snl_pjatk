@@ -123,7 +123,7 @@
                   <!--     Akcja meczowa - GOAL       -->
                   <tr v-for="action in actions" :key="action.id">
                     <td v-if="action.type === 'GOAL'  && action.teamType === 'homeTeam'" align="center"
-                        class="tlh-right-bottom">{{ action.id }}
+                        class="tlh-right-bottom">{{ action.goalNo }}
                     </td>
                     <td v-if="action.type === 'GOAL' && action.teamType === 'homeTeam' " align="center"
                         class="tlh-right-bottom">
@@ -260,7 +260,7 @@
                   <!--     Akcja meczowa - GOAL       -->
                   <tr v-for="action in actions" :key="action.id">
                     <td v-if="action.type === 'GOAL' && action.teamType === 'visitingTeam' " align="center"
-                        class="tlh-right-bottom">{{ action.id }}
+                        class="tlh-right-bottom">{{ action.goalNo }}
                     </td>
                     <td v-if="action.type === 'GOAL' && action.teamType === 'visitingTeam' " align="center"
                         class="tlh-right-bottom">
@@ -689,7 +689,7 @@
               <!--     Akcja meczowa - GOAL       -->
               <tr v-for="action in actions" :key="action.id">
                 <td v-if="action.type === 'GOAL' && action.teamType === 'homeTeam' " align="center"
-                    class="tlh-right-bottom">{{ action.id }}
+                    class="tlh-right-bottom">{{ action.goalNo }}
                 </td>
                 <td v-if="action.type === 'GOAL' && action.teamType === 'homeTeam' " align="center"
                     class="tlh-right-bottom">
@@ -824,7 +824,7 @@
               <!--     Akcja meczowa - GOAL       -->
               <tr v-for="action in actions" :key="action.id">
                 <td v-if="action.type === 'GOAL' && action.teamType === 'visitingTeam' " align="center"
-                    class="tlh-right-bottom">{{ action.id }}
+                    class="tlh-right-bottom">{{ action.goalNo }}
                 </td>
                 <td v-if="action.type === 'GOAL' && action.teamType === 'visitingTeam'" align="center"
                     class="tlh-right-bottom">

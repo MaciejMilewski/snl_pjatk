@@ -113,7 +113,8 @@ export default {
         headers: {
           'Authorization': 'Bearer '+this.User.userInfo.token,
           'Content-Type': `application/json`,
-        }}).then((response)=>{
+        }}).then(()=>{
+
         UIkit.notification({
           message: "Dodano nowego użytkownika "+this.reactiveForm.email,
           status: "success",

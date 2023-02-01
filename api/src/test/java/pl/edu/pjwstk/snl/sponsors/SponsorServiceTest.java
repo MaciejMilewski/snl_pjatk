@@ -29,7 +29,7 @@ class SponsorServiceTest {
 
     @Test
     void findById() {
-        Assertions.assertTrue(sponsorService.findById(1L).get().getName().equals("Trójmiasto.pl"));
+        Assertions.assertTrue(sponsorService.findById(1L).get().getName().equals("Sponsor lig amatorskich"));
     }
 
     @Test

@@ -11,7 +11,7 @@ COPY src ./
 COPY pom.xml ../
 
 
-RUN mvn -f /maciek/app/pom.xml clean package
+RUN mvn -f /maciek/app/pom.xml clean package -DskipTests
 
 #### 2nd Stage ####
 

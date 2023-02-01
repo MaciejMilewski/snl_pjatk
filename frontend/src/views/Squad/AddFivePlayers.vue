@@ -113,6 +113,7 @@ export default {
     },
     saveFive(){
       let nameValue = this.reactiveForm.nameValue;
+      console.log(this.playersFive)
       if(this.playersFive.length !== 5){
         UIkit.notification({
           message:"Piątka nie jest pełna!",
@@ -173,6 +174,7 @@ export default {
         let player = this.playerTemp;
         let position = this.$refs["position-multi-select"].value;
         player.position = position.position;
+        player.number = this.playerNumber;
 
         // Sprawdzanie czy zawodnik już istnieje
         this.playersFive.forEach((p) => {

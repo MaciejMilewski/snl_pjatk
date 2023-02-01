@@ -39,7 +39,7 @@ public class SponsorsLoader implements ApplicationRunner {
 
 
         List<Sponsor> sponsors = List.of(
-                new Sponsor("Trójmiasto.pl", getSponsorImage("trojmiasto.jpg")),
+                new Sponsor("Sponsor lig amatorskich", getSponsorImage("sponsorX.jpg")),
                 new Sponsor("Sponsor zawodnikow", getSponsorImage("sponsor.png")),
                 new Sponsor("Sponsor ligi", getSponsorImage("sponsor2.jpg")),
                 new Sponsor("Sponsor sędziów", getSponsorImage("sponsor3.jpg")),

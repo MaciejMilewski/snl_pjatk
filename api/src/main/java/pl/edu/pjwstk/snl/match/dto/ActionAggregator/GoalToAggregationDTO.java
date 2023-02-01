@@ -38,7 +38,11 @@ public class GoalToAggregationDTO {
 
     private String teamType;
 
-    public GoalToAggregationDTO(Goal goal) {
+    private Integer goalNo;
+
+    public GoalToAggregationDTO(Goal goal, Integer goalNo) {
+        this.goalNo = goalNo;
+
         this.id = goal.getId();
         this.gameMinute = goal.getGameMinute();
         this.gameSecond = goal.getGameSecond();

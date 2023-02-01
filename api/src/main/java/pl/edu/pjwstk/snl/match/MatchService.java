@@ -2,9 +2,7 @@ package pl.edu.pjwstk.snl.match;
 
 
 import java.time.LocalDateTime;
-import java.util.Iterator;
-import java.util.NavigableSet;
-import java.util.TreeSet;
+import java.util.*;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -31,11 +29,10 @@ import pl.edu.pjwstk.snl.team.Team;
 import pl.edu.pjwstk.snl.team.TeamService;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.groupingBy;
 
 @Service
 @RequiredArgsConstructor
@@ -813,10 +810,7 @@ public class MatchService {
 
         ActionAggregator actions = new ActionAggregator();
 
-        List<GoalToAggregationDTO> goals = new ArrayList<>();
-        for (Goal goal : match.getGoals()) {
-            goals.add(new GoalToAggregationDTO(goal));
-        }
+        List<GoalToAggregationDTO> goals = getGoalsAggregation(match);
         actions.addActions(goals);
 
         List<BreakTimeToAggregationDTO> breakTimes = new ArrayList<>();
@@ -851,6 +845,29 @@ public class MatchService {
         actions.addActions(changeGoalkeepers);
 
         return actions;
+    }
+
+    private List<GoalToAggregationDTO> getGoalsAggregation(Match match) {
+        Comparator<Goal> compareByGameMinuteAndSecond = Comparator
+                .comparing(Goal::getGameMinute)
+                .thenComparing(Goal::getGameSecond);
+
+        List<GoalToAggregationDTO> goals = new ArrayList<>();
+        Map<String, List<Goal>> sortedGoalsGroupByTeamName = match.getGoals()
+                .stream()
+                .sorted(compareByGameMinuteAndSecond)
+                .collect(groupingBy(x -> x.getTeam().getName()));
+
+        for (Map.Entry<String, List<Goal>> entry : sortedGoalsGroupByTeamName.entrySet()) {
+            List<Goal> teamGoals = entry.getValue();
+            int goalNo = 1;
+            for (Goal teamGoal : teamGoals) {
+                goals.add(new GoalToAggregationDTO(teamGoal, goalNo));
+                goalNo++;
+            }
+        }
+
+        return goals;
     }
 
     public Match findNearestUpcomingMatch() {

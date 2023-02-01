@@ -17,11 +17,14 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.beans.factory.annotation.Autowired;
 import pl.edu.pjwstk.snl.security.Role.Role;
 import pl.edu.pjwstk.snl.team.Team;
 
@@ -32,6 +35,8 @@ import pl.edu.pjwstk.snl.team.Team;
                 @UniqueConstraint(columnNames = "email")
         })
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Getter
 @Setter
 public class User {

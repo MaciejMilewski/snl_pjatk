@@ -19,6 +19,8 @@ import pl.edu.pjwstk.snl.team.Team;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @JsonSerialize(using = PlayerSerializer.class)
 public class Player {
     @Id

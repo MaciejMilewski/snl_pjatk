@@ -3,6 +3,7 @@ package pl.edu.pjwstk.snl.player;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
+import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -55,7 +56,7 @@ public class PlayerService {
         this.playerRepository.save(player);
     }
 
-    // TODO: add five deleting
+    @Transactional
     public void deleteById(long id) {
         if (this.playerRepository.existsById(id)) {
             Player player = this.playerRepository.findById(id).orElse(null);

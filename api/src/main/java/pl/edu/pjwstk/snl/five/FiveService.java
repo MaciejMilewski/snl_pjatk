@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
@@ -31,6 +32,7 @@ public class FiveService {
 
     public void update(Five five) { this.fiveRepository.save(five); }
 
+    @Transactional
     public void deleteById(long id) {
         if (this.fiveRepository.existsById(id)) {
             Five five = this.fiveRepository.findById(id).orElse(null);

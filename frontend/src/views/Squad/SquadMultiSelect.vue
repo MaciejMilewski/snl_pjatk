@@ -7,6 +7,7 @@
       v-model="value"
       :options="options"
       :custom-label="searchLabel"
+      @select="playerSelection"
       :select-label="'Kliknij enter, aby wybrać'"
       :deselect-label="'Kliknij enter, aby odznaczyć'"
       :option-height="55"
@@ -81,6 +82,11 @@ export default {
 
   },
   methods: {
+    playerSelection(){
+      setTimeout(()=>{
+        this.choosePlayer(this.value);
+      },500)
+    },
     setOptions(options){
       if(options.length === 1){
         this.options = [];

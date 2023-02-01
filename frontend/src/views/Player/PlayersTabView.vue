@@ -7,7 +7,7 @@
           <li><a  @click="incrementKey" class="players-tab-left" href="#"><span uk-icon="icon: plus" />Dodaj zawodnika</a></li>
         </ul>
       </div>
-      <div class="uk-width-expand@m" id="tlh-komponent-tab">
+      <div class="uk-width-expand" id="tlh-komponent-tab">
         <ul id="komponent-tab-lewo-zawodnicy" class="uk-switcher">
           <li>
             <PlayerListAdmin :key="keyValue"

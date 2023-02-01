@@ -9,6 +9,7 @@ const state = {
     players: [{}],
     playersVisiting: [{}],
     playersFive: [{}],
+    playerTemp: null,
     fiveIndex: null,
     strategies: [],
     background: false,
@@ -144,6 +145,7 @@ const mutations = {
     },
     setPlayerFiveTemp(state,playerTemp){
       state.playerFiveTemp = playerTemp
+      state.playerTemp = playerTemp;
     },
     setPlayerFive(state){
       state.playersFive[state.playerIndex] = state.playerFiveTemp;

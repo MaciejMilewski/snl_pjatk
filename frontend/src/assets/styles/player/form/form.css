@@ -1,11 +1,4 @@
 /* PlayerFormView component */
-.uk-form-large {
-    height: inherit !important;
-    display: inline-block;
-    float: right;
-    padding-right: 0;
-}
-
 .uk-form-controls {
     z-index: -1;
     padding: 10px;

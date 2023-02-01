@@ -66,7 +66,7 @@
       <PlayerPositionView ref="position-multi-select" id="pozycja-multi-select"/>
       <label for="player-number" class="uk-label" style="margin-top: 10px;">Numer zawodnika</label>
       <PlayerNumberView name="player-number" v-model:player-number.number="playerNumber" style="margin-top: 10px;"/>
-      <button type="submit" class="uk-button uk-button-default uk-width-1-1" @click="savePlayer()">Zapisz</button>
+      <button type="submit" class="uk-button uk-button-default uk-width-1-1 uk-modal-close" @click="savePlayer()">Zapisz</button>
     </div>
   </div>
   <TeamNameView v-model:name="reactiveForm.nameValue"/>
